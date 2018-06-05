@@ -1,0 +1,8 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Connect(App) renders without crashing 1`] = `
+<App
+  number={10}
+  onClick={[Function]}
+/>
+`;

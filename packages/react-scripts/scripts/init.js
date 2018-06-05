@@ -18,6 +18,7 @@ const fs = require('fs-extra');
 const path = require('path');
 const chalk = require('chalk');
 const spawn = require('react-dev-utils/crossSpawn');
+const setupStack = require('./utils/setupStack');
 
 module.exports = function(
   appPath,
@@ -42,6 +43,9 @@ module.exports = function(
     test: 'react-scripts test --env=jsdom',
     eject: 'react-scripts eject',
   };
+
+  // Add additional configurations to package.json
+  setupStack.addExtraConfiguration(appPackage);
 
   fs.writeFileSync(
     path.join(appPath, 'package.json'),
@@ -128,6 +132,11 @@ module.exports = function(
       console.error(`\`${command} ${args.join(' ')}\` failed`);
       return;
     }
+  }
+
+  // Install extra dependencies for the stack
+  if (setupStack.installDependencies(useYarn, verbose) !== 0) {
+    return;
   }
 
   // Display the most elegant way to cd.

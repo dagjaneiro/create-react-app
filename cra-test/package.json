@@ -1,0 +1,21 @@
+{
+  "name": "cra-test",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "react": "^16.4.0",
+    "react-dom": "^16.4.0",
+    "react-scripts": "/Users/daj/personal/projects/create-react-app/packages/react-scripts/react-scripts-1.1.4.tgz"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject"
+  },
+  "jest": {
+    "snapshotSerializers": [
+      "enzyme-to-json/serializer"
+    ]
+  }
+}

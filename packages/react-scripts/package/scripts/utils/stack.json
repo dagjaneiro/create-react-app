@@ -1,0 +1,23 @@
+{
+  "dependencies": [
+    "redux",
+    "react-redux",
+    "redux-actions"
+  ],
+  "devDependencies": [
+    "enzyme",
+    "enzyme-adapter-react-16",
+    "enzyme-to-json",
+    "eslint",
+    "prettier",
+    "redux-actions-assertions",
+    "redux-mock-store"
+  ],
+  "packageConfig": {
+    "jest": {
+      "snapshotSerializers": [
+        "enzyme-to-json/serializer"
+      ]
+    }
+  }
+}
